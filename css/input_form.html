@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>autofocus</title>
+  </head>
+  <body>
+    <form action="#" method="get" id="user_form">
+      请输入您的姓名:
+      <input type="text" name="first_name" />
+      <input type="submit" value="提交" />
+    </form>
+    <p>
+      下面的输入框在form元素外，但因为指定了form属性为表单的id,所以该输入框仍然属于表单的一部分。
+    </p>
+    <input type="text" name="last_name" form="user_form" /><br />
+  </body>
+</html>

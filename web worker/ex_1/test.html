@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <input type="text" />
+    <script type="text/javascript">
+      let inputs = document.querySelectorAll('input');
+      let first = inputs[0];
+      let second = inputs[1];
+      //WEB页主线程
+      var myWorker = new Worker('worker.js'); //创建一个Worker对象并向它传递将在新线程中执行的脚本的URL
+      first.onchange = function () {
+        myWorker.postMessage([first.value, second.value]);
+        console.log('Message posted to worker 1');
+      };
+
+      second.onchange = function () {
+        myWorker.postMessage([first.value, second.value]);
+        console.log('Message posted to worker 2');
+      };
+      myWorker.onmessage = function (evt) {
+        //接收worker传过来的数据函数
+        console.log('data:' + evt.data); //输出worker发送来的数据
+        // myWorker.terminate();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="draw()">
+    <canvas id="canvas"> </canvas>
+    <script type="text/javascript">
+      function draw() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
+          for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 3; j++) {
+              ctx.beginPath();
+              let x = 25 + j * 50;
+              let y = 25 + i * 50;
+              let redius = 20;
+              let startAngele = 0;
+              var endAngle = Math.PI + (Math.PI * j) / 2;
+              let anticlockwise = i % 2 == 0 ? false : true;
+
+              ctx.arc(x, y, redius, startAngele, endAngle, anticlockwise);
+              if (i > 1) {
+                ctx.fill();
+              } else {
+                ctx.stroke();
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
