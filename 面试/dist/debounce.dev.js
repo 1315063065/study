@@ -1,6 +1,6 @@
 "use strict";
 
-var debounce = function debounce(func, delay) {
+var debounce = function debounce(func, dealy) {
   var timeout;
   return function () {
     if (timeout) {
@@ -9,9 +9,20 @@ var debounce = function debounce(func, delay) {
 
     timeout = setTimeout(function () {
       func();
-    }, delay);
+    }, dealy);
   };
-};
+}; // const debounce = (func, delay) => {
+//   let timeout;
+//   return () => {
+//     if (timeout) {
+//       clearTimeout(timeout);
+//     }
+//     timeout = setTimeout(function () {
+//       func()
+//     }, delay)
+//   }
+// }
+
 
 var log = debounce(function () {
   return console.log('call');

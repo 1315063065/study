@@ -4,4 +4,6 @@ var ffmpeg = require('fluent-ffmpeg');
 
 var fs = require('fs');
 
-ffmpeg(fs.createReadStream('h265.hevc')).videoCodec('libx264').save('265.mp4');
+ffmpeg('/Users/yanglei/study/笔记/node/h265.h265').videoCodec('libx264').output('outputfile.mp4').on('end', function (data) {
+  console.log('Finished processing', data);
+}).run();
