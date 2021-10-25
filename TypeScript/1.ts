@@ -14,4 +14,6 @@ let list4 = [1, 'dd'];
 let list5: any = [1, 'dd', true]
 
 // 固定长度和固定类型
-let person1:[number,string] = [1,"啊"]
+let person1: [number, string] = [1, "啊"]
+
+// 3-5 联合(Union)与文献(Literal)

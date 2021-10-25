@@ -11,3 +11,4 @@ var list4 = [1, 'dd'];
 var list5 = [1, 'dd', true];
 // 固定长度和固定类型
 var person1 = [1, "啊"];
+// 3-5 联合(Union)与文献(Literal)
