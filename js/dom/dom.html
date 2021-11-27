@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="div1">盒子1</div>
+    <div id="div2">盒子2</div>
+    <p>小明</p>
+    <p>小明</p>
+    <p>小明</p>
+    <p>小明</p>
+    <script>
+      // 给window对象添加onload事件监听，onload表示页面都加载完毕
+      window.onload = function () {
+        var box1 = document.getElementsByClassName('div1');
+        var box2 = document.getElementById('div2');
+        var p = document.getElementsByTagName('p');
+        console.log(p);
+      };
+    </script>
+  </body>
+</html>
